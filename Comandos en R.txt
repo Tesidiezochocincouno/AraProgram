@@ -1,0 +1,12 @@
+> library(rvest)
+> purge_movie <- html("https://www.imdb.com/title/tt2184339/?ref_=nv_sr_srsg_0")
+> purge_movie %>%
++ html_node("strong span") %>%
++ html_text() %>%
++ as.numeric()
+> purge_movie %>%
++ html_nodes("#titleCast .itemprop span") %>%
++ html_text()
+> purge_movie %>%
++ html_nodes("table") %>%
++ html_table()
